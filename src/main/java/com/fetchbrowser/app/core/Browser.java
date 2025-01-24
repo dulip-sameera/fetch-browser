@@ -4,7 +4,7 @@ public class Browser {
 
     public static String[] splitUrl(String url) {
         String protocol = "http";
-        String host = "";
+        String host = null;
         int port = -1;
         String path = "/";
 
@@ -58,12 +58,7 @@ public class Browser {
             path = urlWithOutPort;
         }
 
-        System.out.println("Protocol : " + protocol);
-        System.out.println("Host : " + host);
-        System.out.println("Port : " + port);
-//        System.out.println("Path : " + path);
-
-        return new String[] { url };
+        return new String[] { protocol, host, port == -1 ? null : String.valueOf(port), path };
     };
 
 }
