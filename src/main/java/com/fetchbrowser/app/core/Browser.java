@@ -52,6 +52,12 @@ public class Browser {
             }
         }
 
+        // path
+        String urlWithOutPort = hasPort ? urlWithOutHost.substring(String.valueOf(port).length() + 1) : urlWithOutHost;
+        if (!urlWithOutPort.isEmpty()) {
+            path = urlWithOutPort;
+        }
+
         System.out.println("Protocol : " + protocol);
         System.out.println("Host : " + host);
         System.out.println("Port : " + port);
