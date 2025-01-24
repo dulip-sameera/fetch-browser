@@ -58,7 +58,7 @@ public class Browser {
             path = urlWithOutPort;
         }
 
-        return new String[] { protocol, host, port == -1 ? null : String.valueOf(port), path };
+        return new String[] { protocol, host, String.valueOf(port), path };
     };
 
 }
