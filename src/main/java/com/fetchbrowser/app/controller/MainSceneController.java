@@ -13,7 +13,11 @@ public class MainSceneController {
     public WebView wbDisplay;
 
     public void initialize() {
-
+        txtSearch.focusedProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue) {
+                txtSearch.selectAll();
+            }
+        });
     }
 
     public void imgSearchOnMouseClicked(MouseEvent mouseEvent) {
