@@ -49,6 +49,11 @@ public class MainSceneController {
         port = Integer.parseInt(urlParts[2]);
         path = urlParts[3];
 
+        if (!(protocol.equals("http") || protocol.equals("https"))) {
+            displayError("-1", "Invalid protocol, only accept http or https");
+            return;
+        }
+
         if (host == null || port == -1) {
             displayError("-1", "Invalid URL");
             return;
