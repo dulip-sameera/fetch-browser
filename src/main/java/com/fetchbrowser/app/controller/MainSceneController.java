@@ -44,6 +44,12 @@ public class MainSceneController {
 
         String[] urlParts = Browser.splitUrl(url);
 
+        protocol = urlParts[0];
+        host = urlParts[1];
+        port = Integer.parseInt(urlParts[2]);
+        path = urlParts[3];
+
+
     }
 
 
