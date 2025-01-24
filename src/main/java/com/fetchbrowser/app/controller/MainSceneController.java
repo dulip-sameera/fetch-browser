@@ -13,6 +13,7 @@ public class MainSceneController {
     public WebView wbDisplay;
 
     public void initialize() {
+        txtSearch.setText("http://www.google.com");
         txtSearch.focusedProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue) {
                 txtSearch.selectAll();
