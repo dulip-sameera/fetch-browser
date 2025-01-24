@@ -39,6 +39,19 @@ public class Browser {
             host = urlWithoutProtocol;
         }
 
+        // port
+        String urlWithOutHost = urlWithoutProtocol.substring(host.length());
+        if (hasPort) {
+            int m = -1;
+            if ((m = urlWithOutHost.indexOf("/")) != -1) {
+                port = Integer.valueOf(urlWithOutHost.substring(1, m));
+            } else if ((m = urlWithOutHost.indexOf("?")) != -1) {
+                port = Integer.valueOf(urlWithOutHost.substring(1, m));
+            } else {
+                port = Integer.valueOf(urlWithOutHost.substring(1));
+            }
+        }
+
         System.out.println("Protocol : " + protocol);
         System.out.println("Host : " + host);
         System.out.println("Port : " + port);
