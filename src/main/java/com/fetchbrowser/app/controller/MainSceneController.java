@@ -1,5 +1,6 @@
 package com.fetchbrowser.app.controller;
 
+import javafx.application.Platform;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -16,7 +17,7 @@ public class MainSceneController {
         txtSearch.setText("http://www.google.com");
         txtSearch.focusedProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue) {
-                txtSearch.selectAll();
+                Platform.runLater(() -> txtSearch.selectAll());
             }
         });
     }
