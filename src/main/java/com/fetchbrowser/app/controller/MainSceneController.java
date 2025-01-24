@@ -17,6 +17,6 @@ public class MainSceneController {
     }
 
     public void imgSearchOnMouseClicked(MouseEvent mouseEvent) {
-
+        txtSearch.requestFocus();
     }
 }
