@@ -49,7 +49,10 @@ public class MainSceneController {
         port = Integer.parseInt(urlParts[2]);
         path = urlParts[3];
 
-        displayError("404", "NOT FOUND");
+        if (host == null || port == -1) {
+            displayError("-1", "Invalid URL");
+            return;
+        }
 
     }
 
