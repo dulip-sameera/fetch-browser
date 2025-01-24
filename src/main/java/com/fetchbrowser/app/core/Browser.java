@@ -16,6 +16,13 @@ public class Browser {
             hasProtocol = true;
         }
 
+        // change default port according to the protocol
+        port = switch (protocol) {
+            case "http" -> 80;
+            case "https" -> 443;
+            case null, default -> -1;
+        };
+
         return new String[] { url };
     };
 
