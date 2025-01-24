@@ -1,5 +1,6 @@
 package com.fetchbrowser.app.controller;
 
+import com.fetchbrowser.app.core.Browser;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.scene.control.TextField;
@@ -7,6 +8,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.web.WebView;
+
+import java.util.Arrays;
 
 public class MainSceneController {
     public AnchorPane root;
@@ -34,6 +37,6 @@ public class MainSceneController {
     }
 
     private void loadWebPage(String url) {
-        System.out.println(url);
+        System.out.println(Arrays.toString(Browser.splitUrl(url)));
     }
 }
