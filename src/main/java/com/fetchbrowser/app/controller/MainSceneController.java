@@ -9,6 +9,9 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.web.WebView;
 
+import java.io.IOException;
+import java.net.Socket;
+import java.net.UnknownHostException;
 import java.util.Arrays;
 
 public class MainSceneController {
@@ -57,6 +60,15 @@ public class MainSceneController {
         if (host == null || port == -1) {
             displayError("-1", "Invalid URL");
             return;
+        }
+
+        // establish connection
+        try (Socket socket = new Socket(host, port)) {
+
+        } catch (UnknownHostException e) {
+            displayError("404", "Invalid URL");
+        } catch (IOException e) {
+            displayError("-1", "Could not connect to " + host + ":" + port);
         }
 
     }
