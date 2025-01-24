@@ -37,6 +37,14 @@ public class MainSceneController {
     }
 
     private void loadWebPage(String url) {
-        System.out.println(Arrays.toString(Browser.splitUrl(url)));
+        String protocol = "";
+        String host = "";
+        String path = "";
+        int port = -1;
+
+        String[] urlParts = Browser.splitUrl(url);
+
     }
+
+
 }
