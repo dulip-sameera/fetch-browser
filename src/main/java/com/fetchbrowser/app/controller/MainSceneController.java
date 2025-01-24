@@ -1,6 +1,7 @@
 package com.fetchbrowser.app.controller;
 
 import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -24,5 +25,15 @@ public class MainSceneController {
 
     public void imgSearchOnMouseClicked(MouseEvent mouseEvent) {
         txtSearch.requestFocus();
+    }
+
+    public void txtSearchOnAction(ActionEvent actionEvent) {
+        String url = txtSearch.getText();
+        if (url.isBlank()) return;
+        loadWebPage(url.strip());
+    }
+
+    private void loadWebPage(String url) {
+        System.out.println(url);
     }
 }

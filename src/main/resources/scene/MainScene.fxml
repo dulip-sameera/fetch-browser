@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.web.WebView?>
 
-
 <AnchorPane fx:id="root" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fetchbrowser.app.controller.MainSceneController">
    <children>
       <HBox alignment="CENTER" layoutX="60.0" layoutY="73.0" prefHeight="38.0" prefWidth="800.0" spacing="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
@@ -22,7 +21,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </ImageView>
-            <TextField fx:id="txtSearch" prefHeight="33.0" prefWidth="750.0" HBox.hgrow="ALWAYS" />
+            <TextField fx:id="txtSearch" onAction="#txtSearchOnAction" prefHeight="33.0" prefWidth="750.0" HBox.hgrow="ALWAYS" />
          </children>
          <padding>
             <Insets left="10.0" right="10.0" />
